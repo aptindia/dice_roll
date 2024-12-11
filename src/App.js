@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { ThemeProvider } from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
+import configuration from "./configuration";
+import Home from "./modules/Home";
+import { mobileRemoveWhiteStrip } from "./utils/utils";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (props) => {
+   const { theme } = configuration;
+
+   useEffect(() => {
+      mobileRemoveWhiteStrip();
+    }, []);
+
+   return (
+      <>
+         <ThemeProvider theme={theme}>
+            <Routes>
+               <Route exact path="/" element={<Home />} />
+               {/* <Route exact path="/results" element={<Results />} /> */}
+            </Routes>
+         </ThemeProvider>
+      </>
+   );
+};
 
 export default App;
