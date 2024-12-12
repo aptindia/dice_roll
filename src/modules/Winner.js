@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import Sparkles from "react-sparkle";
 
 const WinnerContainer = styled.div`
   ${(props) => props.theme.Winner?.WinnerContainer};
@@ -27,16 +28,25 @@ const Winner = (props) => {
   const { isWinner } = props;
 
   const img_coffee_cup = "/images/img_coffee_cup.png";
-  const winner_sound = "/sounds/winner_sound.wav";
+  // const winner_sound = "/sounds/winner_sound.wav";
   const winner_sound_1 = "/sounds/winner_sound_1.mp3";
 
   const audio = new Audio(winner_sound_1); // Update the path as needed
-  audio.play().catch((error) => {
-    console.error("Playback failed:", error);
-  });
+  // audio.play().catch((error) => {
+  //   console.error("Playback failed:", error);
+  // });
 
   return (
     <WinnerContainer isWinner={isWinner}>
+      <Sparkles
+        color="yellow"
+        count={120}
+        minSize={10}
+        maxSize={15}
+        overflowPx={80}
+        fadeOutSpeed={30}
+        flicker={false}
+      />
       <WinnerWrapper>
         <WinnerTextWrapper>
           <WinnerText>WINNER!</WinnerText>

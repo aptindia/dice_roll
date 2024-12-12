@@ -32,7 +32,7 @@ export const WinnerTheme = {
     background: linear-gradient(180deg, #f08080 0%, #f08080 15%, #f5a5a5 100%);
   `,
   WinnerText: css`
-    font-size: 2.5vw;
+    font-size: 2.3vw;
     font-weight: 700;
     color: #ffffff;
     animation: ${winnerAnimation} 2s infinite;
@@ -42,18 +42,18 @@ export const WinnerTheme = {
   `,
   WinnerOfferText: css`
     position: absolute;
-    top: 0;
+    top: 5%;
     bottom: 0;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     font-weight: 700;
     color: #ffffff;
   `,
   ImgCoffeeCup: css`
-    width: 28%;
+    width: 26%;
   `,
 };
