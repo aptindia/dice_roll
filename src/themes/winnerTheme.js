@@ -19,8 +19,8 @@ export const WinnerTheme = {
     align-items: center;
     background: linear-gradient(180deg, #000000aa 50%, #000000aa 50%);
   `,
-  WinnerWrapper: css`
-    width: 50%;
+  WinnerWrapper: css`    
+    width: 85%;
     text-align: center;
   `,
   WinnerTextWrapper: css`
@@ -32,7 +32,7 @@ export const WinnerTheme = {
     background: linear-gradient(180deg, #f08080 0%, #f08080 15%, #f5a5a5 100%);
   `,
   WinnerText: css`
-    font-size: 2.3vw;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
     animation: ${winnerAnimation} 2s infinite;
@@ -49,11 +49,20 @@ export const WinnerTheme = {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2.2vw;
+    font-size: 1.6rem;    
     font-weight: 700;
     color: #ffffff;
   `,
   ImgCoffeeCup: css`
-    width: 26%;
+    width: 15%;
+
+    @media only screen and (max-width: 960px) {
+      width: 30%;
+    }
+
+    @media only screen and (max-width: 578px) {
+      width: 40%;
+    }
+
   `,
 };

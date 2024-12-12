@@ -2,10 +2,22 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import ReactDice from "react-dice-complete";
 
+const breakpoints = {
+  mobile: '578px',
+  tablet: '768px',
+};
+
 // https://www.npmjs.com/package/react-dice-complete
 
 const DiceContainer = styled.div`
   ${(props) => props.theme.Dice?.DiceContainer};
+
+  .die-container{margin:2.6rem !important;}
+  
+  @media (max-width: ${breakpoints.tablet}) {
+    .die-container{margin:1.2rem !important;}
+  }
+
 `;
 
 const LeftContainer = styled.div`
@@ -31,13 +43,13 @@ const Dices = (props) => {
   const [isClickable, setIsClickable] = useState(true);
 
   //default values
-  const dieSize = (window.innerWidth / window.innerHeight) * 43; // px width/height of each dice face
+  // const dieSize = (window.innerWidth / window.innerHeight) * 45; // px width/height of each dice face
   const numberOfDices = 3; // The number of dice you wish to have
   const dieCornerRadius = 5; // Rounded radius to use for each die
   const rollTime = 1; // time in seconds for the roll animation
   const dotColor = "#FFFFFF"; // hex color code for the face of the die
   const faceColor = "#4680ff"; // hex color code for the face of the die
-  const margin = 25; // margin between each die
+  // const margin = 25; // margin between each die
 
   const img_lady = "/images/img_lady.png";
   const img_logo = "/images/client_logo.png";
@@ -110,8 +122,8 @@ const Dices = (props) => {
           dotColor={dotColor}
           faceColor={faceColor}
           rollTime={rollTime} //time in seconds for the roll animation
-          dieSize={dieSize}
-          margin={margin}
+          // dieSize={dieSize}
+          // margin={margin}
         />
       </LeftContainer>
       <RightContainer>
