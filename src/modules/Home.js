@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const bg_app = "/images/app_bg.jpg";
 
-const Home = (props) => {
+const Home = () => {
   const [isWinner, setIsWinner] = useState(false);
 
   return (

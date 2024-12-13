@@ -46,12 +46,8 @@ const Dices = (props) => {
 
   /** Dices Logic Start */
   useEffect(() => {
-    console.log(isClickable);
-
     // Attach click event listener to the entire document
-    if (isClickable) {
-      document.addEventListener("click", handleFullScreenClick);
-    }
+    document.addEventListener("click", handleFullScreenClick);
 
     // Cleanup event listener on component unmount
     return () => {
@@ -61,8 +57,6 @@ const Dices = (props) => {
 
   // Roll dice on full screen click
   const handleFullScreenClick = () => {
-    console.log(isClickable);
-
     if (isClickable) {
       playSound();
       rollAll();
@@ -72,9 +66,8 @@ const Dices = (props) => {
   const rollAll = () => {
     setRollCount((prevCount) => {
       const newCount = prevCount + 1;
-      console.log("newCount: " + newCount);
 
-      if (newCount % 5 === 0) {
+      if (newCount % 2 === 0) {
         reactDice.current.rollAll([6, 6, 6]); // Forcefully set three dice to 6 on the second roll
       } else {
         reactDice.current.rollAll();
@@ -89,8 +82,9 @@ const Dices = (props) => {
   };
 
   const rollDone = (totalValue, values) => {
-    console.log("individual die values array:", values);
-    console.log("total dice value:", totalValue);
+    // individual die values array: values
+    // total dice value: totalValue
+
     // Success! Show Winner Screen
     if (totalValue == 18) {
       setIsWinner(true);
