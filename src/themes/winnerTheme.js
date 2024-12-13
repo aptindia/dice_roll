@@ -14,7 +14,7 @@ export const WinnerTheme = {
     bottom: 0;
     left: 0;
     right: 0;
-    display: ${(props) => (props.isWinner ? 'flex': 'none')};
+    display: ${(props) => (props.isWinner ? "flex" : "none")};
     justify-content: center;
     align-items: center;
     background: linear-gradient(180deg, #000000aa 50%, #000000aa 50%);
@@ -42,7 +42,7 @@ export const WinnerTheme = {
   `,
   WinnerOfferText: css`
     position: absolute;
-    top: 5%;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -64,5 +64,34 @@ export const WinnerTheme = {
       width: 40%;
     }
 
+  `,
+  ButtonWrapper: css`
+    z-index: 1000;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    @media (max-width: 767px) {
+      margin-top: 0rem;
+    }
+    @media (max-width: 576px) {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+  `,
+  Button: css`
+    z-index: 1000;
+    cursor: pointer;
+    color: ${(props) => props.theme.txtButton};
+    background: linear-gradient(180deg, #1153fc 0%, #1153fc 15%, #5581f1 100%);
+    border: 1px solid #5581f1;
+    padding: 0.2rem 1.5rem;
+    font-size: 1.8rem;
+    line-height: normal;
+    border-radius: 0.2rem;
+    min-width: 92px;
+    @media (max-width: 767px) {
+      font-size: 1.2rem;
+    }
   `,
 };

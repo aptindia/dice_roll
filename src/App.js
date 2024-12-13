@@ -17,7 +17,6 @@ const App = (props) => {
          <ThemeProvider theme={theme}>
             <Routes>
                <Route exact path="/" element={<Home />} />
-               {/* <Route exact path="/results" element={<Results />} /> */}
             </Routes>
          </ThemeProvider>
       </>
