@@ -30,3 +30,21 @@ code {
   width: 40%;
 }
 
+@media only screen and (max-width: 960px) {
+  .dice {
+    width: 50%;
+  }  
+}
+
+@media only screen and (max-width: 578px) {
+  .dice {
+    width: 65%;
+  }  
+}
+
+@media only screen and (max-width: 480px) {
+  .dice {
+    width: 75%;
+  }  
+}
+
